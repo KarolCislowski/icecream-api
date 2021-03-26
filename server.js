@@ -1,4 +1,5 @@
 import express from 'express'
+import bodyParser from 'body-parser'
 import cors from 'cors'
 
 // Defines the port the app will run on. Defaults to 8080, but can be 
@@ -10,10 +11,7 @@ const app = express()
 
 // Add middlewares to enable cors and json body parsing
 app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({
-  extended: true
-}))
+app.use(bodyParser.json())
 
 const iceCreams = [
   {
